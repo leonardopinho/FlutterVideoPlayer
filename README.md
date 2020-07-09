@@ -2,4 +2,4 @@
 example of video player created in Flutter
 
 
-<img src="http://www.arcadestudio.com.br/img/flutter_player.png" width="400">
+<img src="https://arcadestudio.com.br/img/flutter_player.png" width="400">
