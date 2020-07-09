@@ -1,4 +1,6 @@
+import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,14 +31,34 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String _url = '__URL__';
+  var _videoPlayerController;
+  var _chewieController;
+
+  @override
+  void initState() {
+    super.initState();
+    _videoPlayerController = VideoPlayerController.network(
+      _url,
+    );
+    _chewieController = ChewieController(videoPlayerController: _videoPlayerController, aspectRatio: 3 / 2, autoPlay: true, looping: true);
+  }
+
+  @override
+  void dispose() {
+    _videoPlayerController.dispose();
+    _chewieController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(),
+      body: Chewie(
+        controller: _chewieController,
       ),
     );
   }

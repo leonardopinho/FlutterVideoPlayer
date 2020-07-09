@@ -1,5 +1,5 @@
-name: flutter_video_player
-description: A new Flutter application.
+name: VideoPlayer
+description: Example of video player created in Flutter.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -21,6 +21,9 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  chewie: 0.9.10
+  video_player: ^0.10.0+2
+
   flutter:
     sdk: flutter
 
